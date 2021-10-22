@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax</title>
+
+    <style>
+
+        .flag{
+            height: 50px;
+            border-radius: 8px;
+        }
+        .card{
+            padding: 35px;
+            border: 1px rgb(194, 194, 194) solid;
+            border-radius: 15px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 20px;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-gap: 20px;
+        }
+
+        #feed {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-gap: 15px;
+            justify-items: center;
+            margin-top: 25px;
+        }
+
+        #btn{
+            background-color: rgb(29, 29, 29);
+            color: white;
+            border: 0;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 20px;
+            margin: auto;
+            padding: 13px 25px 13px 25px;
+            border-radius: 15px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    
+    <div style="text-align: center;">
+        <button id="btn">Show Countries</button>
+    </div>
+
+    <div id="feed"></div>
+    <script>
+        document.getElementById('btn').addEventListener('click', 
+        async function showCountries(){
+            const response = await fetch ('https://restcountries.com/v3.1/all');
+            const data = await response.json();
+
+            data.forEach(country => {
+                const countryCard = document.createElement('div');
+                const countryFlag = document.createElement('img');
+                countryCard.innerHTML = "Country Name: " + country.name.common;
+                countryFlag.src = country.flags.png;
+                countryCard.appendChild(countryFlag);
+                document.getElementById('feed').appendChild(countryCard);
+                countryCard.classList.add('card');
+                countryFlag.classList.add('flag');
+            })
+        }
+
+        )
+    </script>
+</body>
+</html>
