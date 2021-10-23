@@ -8,10 +8,47 @@
 
     <style>
 
-        .flag{
+        *{
+            margin: 0;
+            padding: 0;
+        }
+    .title-banner{
+        background-color: #0E1E25;
+        color: white;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 20px;
+        justify-items: center;
+        align-content: center;
+        height: 120px;
+    }
+
+    .title-banner > span {
+        color: #37B0BB;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 22px;
+        font-weight: 800;
+    }
+
+  
+  #btn{
+        color: #37B0BB;
+        border: 0;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 20px;
+        margin: auto;
+        padding: 13px 25px 13px 25px;
+        border-radius: 15px;
+        cursor: pointer;
+        background-color: #0E1E25;
+        border: #37B0BB 2px dotted;
+        }
+         .flag{
             height: 50px;
             border-radius: 8px;
         }
+
+        
         .card{
             padding: 35px;
             background-color: #28293D;
@@ -32,24 +69,16 @@
             margin-top: 25px;
         }
 
-        #btn{
-            background-color: rgb(29, 29, 29);
-            color: white;
-            border: 0;
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            font-size: 20px;
-            margin: auto;
-            padding: 13px 25px 13px 25px;
-            border-radius: 15px;
-            cursor: pointer;
-        }
     </style>
 </head>
 <body>
     
-    <div style="text-align: center;">
+    <div class="title-banner">
         <button id="btn">Click to see all Countries in the world with flag</button>
+        <span>By Vahid Sediqi</span>
+
     </div>
+
 
     <div id="feed"></div>
     <script>
