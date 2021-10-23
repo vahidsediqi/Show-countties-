@@ -78,6 +78,7 @@
     <div class="title-banner">
         <button id="btn">Show Countries</button>
         <span>By Vahid Sediqi</span>
+        <span style="color: white" id="count"></span>
 
     </div>
 
@@ -88,8 +89,9 @@
         async function showCountries(){
             const response = await fetch ('https://restcountries.com/v3.1/all');
             const data = await response.json();
-
+            const count = data.length
             data.forEach(country => {
+                document.getElementById.innerHTML = count;
                 const countryCard = document.createElement('div');
                 const countryFlag = document.createElement('img');
                 countryCard.innerHTML = "Country Name: " + country.name.common;
