@@ -14,7 +14,8 @@
         }
         .card{
             padding: 35px;
-            border: 1px rgb(194, 194, 194) solid;
+            background-color: #28293D;
+            color: #fff;
             border-radius: 15px;
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             font-size: 20px;
@@ -25,7 +26,7 @@
 
         #feed {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
             grid-gap: 15px;
             justify-items: center;
             margin-top: 25px;
@@ -47,7 +48,7 @@
 <body>
     
     <div style="text-align: center;">
-        <button id="btn">Show Countries</button>
+        <button id="btn">Click to see all Countries in the world with flag</button>
     </div>
 
     <div id="feed"></div>
